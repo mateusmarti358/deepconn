@@ -22,7 +22,7 @@ local function encerrar_sessao(sock)
     if sock then
         sock:settimeout(nil) -- Bloqueia para garantir envio
         -- Usa pcall para não travar se o socket já estiver fechado
-        pcall(function() sock:send("DESCONECTADO\n") end)
+        pcall(function() sock:send("exit\n") end)
         sock:close()
     end
 
